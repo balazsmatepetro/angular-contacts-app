@@ -1,0 +1,28 @@
+{
+  "name": "angular-contacts-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "bootstrap-sass": "^3.3.7",
+    "browserify": "^14.4.0",
+    "eslint": "^4.5.0",
+    "grunt": "^1.0.1",
+    "grunt-angular-templates": "^1.1.0",
+    "grunt-browserify": "^5.2.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-eslint": "^20.0.0"
+  },
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-ui-router": "^1.0.0-rc.1"
+  }
+}
