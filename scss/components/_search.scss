@@ -1,0 +1,51 @@
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../variables";
+
+.search-input {
+    background-color: transparent;
+    border: none;
+    display: block;
+    width: 100%;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.search-input-container {
+    $padding-horizontal: $line-height-computed / 2;
+    $padding-left: $padding-horizontal * 2 + $search-input-icon-width;
+    $padding-vertical: $line-height-computed / 5;
+
+    border-bottom: 1px solid $search-input-container-color-border;
+    padding: $padding-vertical $padding-horizontal $padding-vertical $padding-left;
+    position: relative;
+
+    .glyphicon {
+        display: block;
+        left: $padding-horizontal;
+        position: absolute;
+        text-align: center;
+        // TODO: This value must be calculated!
+        top: 6px;
+        width: $search-input-icon-width;
+    }
+
+    &:after,
+    &:before {
+        border-left: 1px solid $search-input-container-color-border;
+        bottom: 0;
+        content: " ";
+        display: block;
+        height: $line-height-computed / 4;
+        position: absolute;
+    }
+
+    &:after {
+        right: 0;
+    }
+
+    &:before {
+        left: 0;
+    }
+}
