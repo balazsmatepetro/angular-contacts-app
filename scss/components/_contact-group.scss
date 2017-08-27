@@ -1,0 +1,16 @@
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../variables";
+
+.contact-group {
+    display: block;
+}
+
+.contact-group-name {
+    $base-padding: $line-height-computed / 4;
+
+    background-color: $contact-group-name-color-bg;
+    font-size: $font-size-base;
+    font-weight: bold;
+    margin: 0;
+    padding: $base-padding $base-padding $base-padding $contact-group-name-padding-left;
+}

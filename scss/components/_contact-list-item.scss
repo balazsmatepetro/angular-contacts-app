@@ -1,0 +1,44 @@
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/vendor-prefixes";
+@import "../variables";
+
+.contact-list-item {
+    @include transition(all .5s);
+    cursor: pointer;
+
+    .media-body {
+        vertical-align: middle;
+    }
+
+    .media-object {
+        height: $contact-list-item-image-height;
+        width: $contact-list-item-image-width;
+    }
+
+    .list-inline {
+        // The 5px padding horizontally is a hard coded value in the original definition (_type.scss:117), 
+        // so I decided that I'm going to do the same. The negative margin is necessary, because the list 
+        // must be positioned to the edge of container element.
+        // margin: 0 -5px 0 -5px;
+
+        margin: 0;
+    }
+}
+
+.contact-list-item-active {
+    background-color: $contact-list-item-color-bg;
+}
+
+.contact-list-item-contact-name {
+    // The .btn class has 6px padding vertically by default ($padding-base-vertical) and one pixel
+    // wide edge, so we need 7px wide padding vertically, due to this the buttons and the name
+    // will be aligned properly.
+    padding: ($padding-base-vertical + 1) 0;
+}
+
+.contact-list-item-contact-name,
+.contact-list-item .list-inline {
+    // The contact name has the same padding as the button, so we can set the 'display' property
+    // to 'inline-block'.
+    display: inline-block;
+}
