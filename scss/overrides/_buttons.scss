@@ -1,0 +1,9 @@
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/vendor-prefixes";
+@import "../variables";
+
+.btn {
+    // As it was in the requirements:
+    // "create transitions effect wherever possible like changing panels, navigating in the application."
+    // So it's time to apply some transition effect on the buttons. :)
+    @include transition(all $animation-duration);
+}
