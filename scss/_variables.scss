@@ -1,24 +1,37 @@
-// Bootstrap Overrides
-
-// --- Scaffolding
-$body-bg: #eaeaea;
-$link-color: #666;
-
-// --- Forms
-$legend-border-color: #666;
-
-// --- Iconography
-$icon-font-path: "../../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
-
 // Application
 
 // --- Common
 $animation-duration: .5s;
-$border-color-primary: #666;
+$border-color-primary: #a5a2a9;
 
-// --- Contact List Media Object
-$contact-list-media-object-color-bg: red;
+// --- Contact List Item
+$contact-list-item-color-bg: #a9c6f5;
+$contact-list-item-image-height: 70px;
+$contact-list-item-image-width: 70px;
+
+// --- Contact Group
+$contact-group-name-color-bg: #e5e3e5;
+$contact-group-name-padding-left: $contact-list-item-image-width + 10;
+
+// --- Contact List Action Container
+$contact-list-action-container-color-icon: #747274;
+
+// --- Contact List Action List
+$contact-list-action-list-item-color-border: $border-color-primary;
 
 // --- Search
-$search-input-container-color-border: #666;
+$search-input-container-color-border: $border-color-primary;
 $search-input-icon-width: 16px;
+
+// Bootstrap Overrides
+
+// --- Scaffolding
+$body-bg: #f0eef0;
+$text-color: #343334;
+$link-color: $text-color;
+
+// --- Forms
+$legend-border-color: $border-color-primary;
+
+// --- Iconography
+$icon-font-path: "../../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
