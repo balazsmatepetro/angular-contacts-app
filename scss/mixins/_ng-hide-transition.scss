@@ -1,0 +1,11 @@
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/opacity";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/vendor-prefixes";
+
+@mixin ng-hide-transition($transition: all .5s) {
+    @include opacity(1);
+    @include transition($transition);
+
+    &.ng-hide {
+        @include opacity(0);
+    }
+}

@@ -1,7 +1,9 @@
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../mixins/ng-hide-transition";
 @import "../variables";
 
 .contact-group {
+    @include ng-hide-transition;
     display: block;
 }
 
