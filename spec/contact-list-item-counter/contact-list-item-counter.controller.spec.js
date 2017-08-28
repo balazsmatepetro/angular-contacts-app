@@ -1,6 +1,4 @@
 import ContactListItemCounterController from '../../src/contact-list-item-counter/contact-list-item-counter.controller';
-import Contact from '../../src/core/contact.entity';
-import ContactPresenter from '../../src/core/contact.presenter';
 import * as Narrow from '../../src/core/narrow-visible-contact-entries';
 
 describe('ContactListItemCounterController', () => {
@@ -12,20 +10,14 @@ describe('ContactListItemCounterController', () => {
 
     describe('count', () => {
         it('should return the length of filtered collection', () => {
-            const CONTACT_PRESENTERS = [
-                new ContactPresenter(new Contact(1, 'Sterling', 'Archer'), true),
-                new ContactPresenter(new Contact(2, 'Malory', 'Archer'), false),
-                new ContactPresenter(new Contact(3, 'Lana', 'Kane'), true)
-            ];
+            const RETURN_VALUE = [1, 2];
 
-            const FILTER_SPY = spyOn(Narrow, 'default').and.callThrough();
-
-            controller.contacts = CONTACT_PRESENTERS;
+            const FILTER_SPY = spyOn(Narrow, 'default').and.callFake(() => RETURN_VALUE);
 
             const RESULT = controller.count();
 
-            expect(RESULT).toEqual(2);
-            expect(FILTER_SPY).toHaveBeenCalledWith(CONTACT_PRESENTERS);
+            expect(RESULT).toEqual(RETURN_VALUE.length);
+            expect(FILTER_SPY).toHaveBeenCalled();
         });
     });
 
