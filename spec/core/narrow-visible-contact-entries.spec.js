@@ -1,6 +1,6 @@
-import narrowVisibleContactEntries from '../../src/core/narrow-visible-contact-entries';
 import Contact from '../../src/core/contact.entity';
 import ContactPresenter from '../../src/core/contact.presenter';
+import narrowVisibleContactEntries from '../../src/core/narrow-visible-contact-entries';
 
 describe('narrowVisibleContactEntries', () => {
     it('should throw exception when the given argument is not an array', () => {
