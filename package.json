@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node node_modules/.bin/karma start"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +21,11 @@
     "grunt-cli": "^1.2.0",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-eslint": "^20.0.0",
-    "jasmine": "^2.8.0"
+    "jasmine": "^2.8.0",
+    "karma": "^1.7.0",
+    "karma-browserify": "^5.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4"
   },
   "dependencies": {
     "angular": "^1.6.6",
