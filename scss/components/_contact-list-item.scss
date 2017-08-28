@@ -4,6 +4,7 @@
 
 .contact-list-item {
     @include ng-hide-transition;
+    border-bottom: 1px solid $contact-list-item-color-border-bottom;
     cursor: pointer;
 
     .media-body {
