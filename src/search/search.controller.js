@@ -17,24 +17,16 @@ export default class SearchController {
         // Setting necessary fields.
         this.$scope = $scope;
         this.searchService = searchService;
-        // Watching the search term changes.
-        this.$scope.$watch(() => this.term, (newTerm) => {
-            // We have to narrow only when the term is not undefined.
-            if (undefined !== newTerm) {
-                this.narrow(newTerm);
-            }
-        });
     }
 
     /**
      * Narrows the visible contact items on the UI.
      * 
-     * @param {String} [term=''] The given search term.
      * @memberof SearchController
      */
-    narrow(term = '') {
+    narrow() {
         // If the search term is an empty string.
-        if ('' === term) {
+        if ('' === this.term) {
             // We have to make visible all contact items.
             changeVisibility(this.contactPresenters, () => true);
             // An stop running.
@@ -43,7 +35,7 @@ export default class SearchController {
         // If the search term is not an empty string, we have to perform a new search.
         this
             .searchService
-            .search(term)
+            .search(this.term)
             .then((contacts) => {
                 // Mapping the narrowed contact IDs to a string.
                 const NARROWED_IDS = contacts.map((contact) => contact.id);
