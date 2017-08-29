@@ -2,6 +2,7 @@ import ContactPresenter from '../core/contact.presenter';
 import ContactGroup from './contact-group.entity';
 import ContactGroupMap from './contact-group.contact-group-map';
 import helper from './contact-group.helper';
+import isObject from 'lodash.isobject';
 
 /**
  * Contact group aggregator service.
@@ -33,7 +34,7 @@ export default class AggregateService {
         // Looping throgh contacts.
         contacts.forEach((contact) => {
             // If the given value is not object or not a ContactPresenter instance we have to throw an exception.
-            if ('object' !== typeof contact || !(contact instanceof ContactPresenter)) {
+            if (!isObject(contact) || !(contact instanceof ContactPresenter)) {
                 throw new Error('All items must be an instance of ContactPresenter');
             }
             // Getting first letter of first name.

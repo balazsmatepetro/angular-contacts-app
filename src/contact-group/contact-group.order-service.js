@@ -1,5 +1,6 @@
 import ContactGroupMap from './contact-group.contact-group-map';
 import helper from './contact-group.helper';
+import isObject from 'lodash.isobject';
 
 /**
  * Contact group order service.
@@ -19,7 +20,7 @@ export default class OrderService {
      */
     order(contactGroupMap) {
         // If the given argument is not an instance of ContactGroupMap, we have to throw an exception.
-        if ('object' !== typeof contactGroupMap || !(contactGroupMap instanceof ContactGroupMap)) {
+        if (!isObject(contactGroupMap) || !(contactGroupMap instanceof ContactGroupMap)) {
             throw new Error('The given argument must be an instance of ContactGroupMap!');
         }
         // The array of ordered contact groups.

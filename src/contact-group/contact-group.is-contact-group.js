@@ -1,4 +1,5 @@
 import ContactGroup from './contact-group.entity';
+import isObject from 'lodash.isobject';
 
 /**
  * Returns true if the given value is a ContactGroup instance, else false.
@@ -8,5 +9,5 @@ import ContactGroup from './contact-group.entity';
  * @returns {Boolean}
  */
 export default function isContactGroup(value) {
-    return 'object' === typeof value && value instanceof ContactGroup;
+    return isObject(value) && value instanceof ContactGroup;
 }

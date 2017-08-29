@@ -1,4 +1,5 @@
 import ContactPresenter from './contact.presenter';
+import isObject from 'lodash.isobject';
 
 /**
  * Return the collection only of the visible ContactPresenters by the given collection.
@@ -28,5 +29,5 @@ export default function narrowVisibleContactPresenters(contactPresenters) {
  * @returns {Boolean}
  */
 function isContactPresenterInstance(contact) {
-    return 'object' === typeof contact && contact instanceof ContactPresenter;
+    return isObject(contact) && contact instanceof ContactPresenter;
 }
