@@ -33,6 +33,7 @@
     "angular-ui-router": "^1.0.0-rc.1",
     "lodash.filter": "^4.6.0",
     "lodash.find": "^4.6.0",
+    "lodash.isstring": "^4.0.1",
     "lodash.startswith": "^4.2.1"
   }
 }
