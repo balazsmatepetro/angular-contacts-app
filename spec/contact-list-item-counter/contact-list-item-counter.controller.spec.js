@@ -1,5 +1,5 @@
 import ContactListItemCounterController from '../../src/contact-list-item-counter/contact-list-item-counter.controller';
-import * as Narrow from '../../src/core/narrow-visible-contact-entries';
+import * as Narrow from '../../src/core/narrow-visible-contact-presenters';
 
 describe('ContactListItemCounterController', () => {
     let controller = undefined;

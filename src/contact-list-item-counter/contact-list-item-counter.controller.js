@@ -1,4 +1,4 @@
-import narrowVisibleContactEntries from '../core/narrow-visible-contact-entries';
+import narrowVisibleContactPresenters from '../core/narrow-visible-contact-presenters';
 
 /**
  * The controller of contact list item counter component.
@@ -15,7 +15,7 @@ export default class ContactListItemCounterController {
      * @memberof ContactListItemCounterController
      */
     count() {
-        return narrowVisibleContactEntries(this.contacts).length;
+        return narrowVisibleContactPresenters(this.contacts).length;
     }
 
     /**

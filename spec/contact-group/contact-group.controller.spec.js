@@ -1,5 +1,5 @@
 import ContactGroupController from '../../src/contact-group/contact-group.controller';
-import * as Narrow from '../../src/core/narrow-visible-contact-entries';
+import * as Narrow from '../../src/core/narrow-visible-contact-presenters';
 
 describe('ContactGroupController', () => {
     let controller = undefined;
