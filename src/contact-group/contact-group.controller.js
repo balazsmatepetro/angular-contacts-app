@@ -1,4 +1,4 @@
-import narrowVisibleContactEntries from '../core/narrow-visible-contact-entries';
+import narrowVisibleContactPresenters from '../core/narrow-visible-contact-presenters';
 
 /**
  * The controller of contact group component.
@@ -15,6 +15,6 @@ export default class ContactGroupController {
      * @memberof ContactGroupController
      */
     hasVisibleContact() {
-        return 0 !== narrowVisibleContactEntries(this.contacts).length;
+        return 0 !== narrowVisibleContactPresenters(this.contacts).length;
     }
 }
