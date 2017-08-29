@@ -1,4 +1,4 @@
 <section class="contact-group" data-ng-show="vm.hasVisibleContact()">
-    <h1 class="contact-group-name text-uppercase">{{::(0 === vm.name.length ? '&nbsp;' : vm.name)}}</h1>
-    <contact-list-item data-ng-repeat="contact in vm.contacts" data-contact="contact"></contact-list-item>
+    <h1 class="contact-group-name text-uppercase">{{::(vm.isEmptyNamedGroup() ? '&nbsp;' : vm.contactGroup.name)}}</h1>
+    <contact-list-item data-ng-repeat="contact in vm.contactGroup.contacts" data-contact="contact"></contact-list-item>
 </section>

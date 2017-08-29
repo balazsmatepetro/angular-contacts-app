@@ -2,8 +2,7 @@ import ContactGroupController from './contact-group.controller';
 
 export default {
     bindings: {
-        contacts: '<',
-        name: '<'
+        contactGroup: '<'
     },
     controller: ContactGroupController,
     controllerAs: 'vm',

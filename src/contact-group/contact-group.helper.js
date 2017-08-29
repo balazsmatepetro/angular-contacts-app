@@ -1,4 +1,4 @@
 export default {
     alphabet: 'abcdefghijklmnopqrstuvwxyz',
-    emptyGroupName: ''
+    emptyGroupName: ' '
 };
