@@ -25,9 +25,9 @@ export default function narrowVisibleContactPresenters(contactPresenters) {
 /**
  * Returns true if the given argument is a ContactPresenter instance, else false.
  * 
- * @param {ContactPresenter} contact The given argument.
+ * @param {ContactPresenter} value The given argument.
  * @returns {Boolean}
  */
-function isContactPresenterInstance(contact) {
-    return isObject(contact) && contact instanceof ContactPresenter;
+function isContactPresenterInstance(value) {
+    return isObject(value) && value instanceof ContactPresenter;
 }
