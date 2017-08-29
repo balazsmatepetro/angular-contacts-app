@@ -14,10 +14,12 @@ export default class ContactPresenter {
      * @param {boolean} [isVisible=true] The visibility of entry.
      * @memberof ContactPresenter
      */
-    constructor(contact, isVisible = true) {
+    constructor(contact, isVisible = true, isActive = false) {
         this.id = contact.id;
         this.firstName = contact.firstName;
         this.lastName = contact.lastName;
+        this.groups = contact.groups;
         this.isVisible = !!isVisible;
+        this.isActive = !!isActive;
     }
 }
