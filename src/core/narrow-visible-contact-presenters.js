@@ -1,5 +1,4 @@
-import ContactPresenter from './contact.presenter';
-import isObject from 'lodash.isobject';
+import isContactPresenter from './is-contact-presenter';
 
 /**
  * Return the collection only of the visible ContactPresenters by the given collection.
@@ -19,15 +18,5 @@ export default function narrowVisibleContactPresenters(contactPresenters) {
         throw new Error('The given array cannot be empty!');
     }
     // Returning only the visible contact entries.
-    return contactPresenters.filter((contactPresenter) => isContactPresenterInstance(contactPresenter) && contactPresenter.isVisible);
-}
-
-/**
- * Returns true if the given argument is a ContactPresenter instance, else false.
- * 
- * @param {ContactPresenter} value The given argument.
- * @returns {Boolean}
- */
-function isContactPresenterInstance(value) {
-    return isObject(value) && value instanceof ContactPresenter;
+    return contactPresenters.filter((contactPresenter) => isContactPresenter(contactPresenter) && contactPresenter.isVisible);
 }
