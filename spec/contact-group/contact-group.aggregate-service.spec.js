@@ -28,11 +28,11 @@ describe('AggregateService', () => {
 
         it('should aggregate ContactPresenter instances correctly', () => {
             const CONTACT_PRESENTERS = [
-                new ContactPresenter(new Contact(1, 'Sterlin', 'Archer')),
-                new ContactPresenter(new Contact(2, 'Malory', 'Archer')),
-                new ContactPresenter(new Contact(3, 'Lana', 'Kane')),
-                new ContactPresenter(new Contact(4, 'Cyril', 'Figgis')),
-                new ContactPresenter(new Contact(5, 'Cheryl', 'Tunt')),
+                new ContactPresenter(new Contact(null, 'Sterlin', 'Archer')),
+                new ContactPresenter(new Contact(null, 'Malory', 'Archer')),
+                new ContactPresenter(new Contact(null, 'Lana', 'Kane')),
+                new ContactPresenter(new Contact(null, 'Cyril', 'Figgis')),
+                new ContactPresenter(new Contact(null, 'Cheryl', 'Tunt')),
             ];
 
             const RESULT = service.aggregate(CONTACT_PRESENTERS);

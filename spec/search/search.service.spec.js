@@ -3,14 +3,14 @@ import Contact from '../../src/core/contact.entity';
 import ContactService from '../../src/core/contact.service';
 import SearchService from '../../src/search/search.service';
 
-describe('ContactService', () => {
+describe('SearchService', () => {
     const DATA = [
-        new Contact(1, 'Sterling', 'Archer', []),
-        new Contact(2, 'Malory', 'Archer', []),
-        new Contact(3, 'Lana', 'Kane', []),
-        new Contact(4, 'John', 'Doe', []),
-        new Contact(5, 'Joe', 'Swanson', []),
-        new Contact(6, 'Paul', 'Parker', [])
+        new Contact(null, 'Sterling', 'Archer'),
+        new Contact(null, 'Malory', 'Archer'),
+        new Contact(null, 'Lana', 'Kane'),
+        new Contact(null, 'John', 'Doe'),
+        new Contact(null, 'Joe', 'Swanson'),
+        new Contact(null, 'Paul', 'Parker')
     ];
 
     let _$rootScope_ = undefined;
@@ -103,8 +103,8 @@ describe('ContactService', () => {
             expectResult('x', [], true);
         });
 
-        function expectResult(term, expectedResult, caseInsesitive) {
-            searchService.search(term, caseInsesitive).then((contacts) => {
+        function expectResult(term, expectedResult, caseInsensitive) {
+            searchService.search(term, caseInsensitive).then((contacts) => {
                 expect(contacts.length).toEqual(expectedResult.length);
 
                 expectedResult.forEach((item, index) => {
