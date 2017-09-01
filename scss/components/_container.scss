@@ -2,7 +2,11 @@
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 
 .container {
+    $padding-vertical: $line-height-computed / 2;
+
     @include container-fixed;
+    padding-bottom: $padding-vertical;
+    padding-top: $padding-vertical;
     
     @media (min-width: $screen-sm-min) {
         width: $container-sm;
