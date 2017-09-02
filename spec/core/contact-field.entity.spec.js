@@ -23,11 +23,6 @@ describe('ContactField', () => {
             });
         });
 
-        it('should throw exception when the given label is an empty string', () => {
-            expect(() => new ContactField(CONTACT_FIELD_ID, ''))
-                .toThrow(new Error('The label cannot be an empty string!'));
-        });
-
         it('should throw exception when the given type is invalid', () => {
             invalidTypes().forEach((invalidType) => {
                 expect(() => new ContactField(CONTACT_FIELD_ID, CONTACT_FIELD_LABEL, invalidType))
@@ -45,16 +40,6 @@ describe('ContactField', () => {
                 ))
                     .toThrow(new Error('The value must be a string!'));
             });
-        });
-
-        it('should throw exception when the given value is an empty string', () => {
-            expect(() => new ContactField(
-                CONTACT_FIELD_ID,
-                CONTACT_FIELD_LABEL,
-                CONTACT_FIELD_TYPE,
-                ''
-            ))
-                .toThrow(new Error('The value cannot be an empty string!'));
         });
 
         function invalidIds() {
