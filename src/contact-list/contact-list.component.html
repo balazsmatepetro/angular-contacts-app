@@ -1,0 +1,13 @@
+<div class="contact-list">
+    <div class="contact-list-top">
+        <search data-contact-presenters="vm.contacts"></search>
+        
+        <a data-ui-sref="new">New</a>
+    </div>
+
+    <contact-details-popup data-contact="vm.selectedContact"></contact-details-popup>
+
+    <contact-list-item-counter data-contacts="vm.contacts"></contact-list-item-counter>
+
+    <contact-group data-ng-repeat="contactGroup in vm.contactGroups" data-contact-group="contactGroup"></contact-group>
+</div>

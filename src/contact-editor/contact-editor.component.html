@@ -1,0 +1,74 @@
+<form class="contact-editor" name="contactForm" data-ng-submit="vm.save()">
+    <fieldset>
+        <legend>Basic Information</legend>
+
+        <div class="form-group" data-ng-class="{
+            'has-error': contactForm.firstName.$dirty && contactForm.firstName.$invalid,
+            'has-success': contactForm.firstName.$dirty && !contactForm.firstname.$invalid
+        }">
+            <label for="contact-first-name" class="control-label">First Name</label>
+            <input id="contact-first-name" class="form-control" name="firstName" type="text" required data-ng-model="vm.contact.firstName">
+            <div data-ng-messages="contactForm.firstName.$dirty && contactForm.firstName.$error" role="alert">
+                <div class="help-block" data-ng-message="required">Please enter a value for this field.</div>
+            </div>
+        </div>
+
+        <div class="form-group" data-ng-class="{
+            'has-error': contactForm.lastName.$dirty && contactForm.lastName.$invalid,
+            'has-success': contactForm.lastName.$dirty && !contactForm.lastName.$invalid
+        }">
+            <label for="contact-last-name" class="control-label">Last Name</label>
+            <input id="contact-last-name" class="form-control" name="lastName" type="text" required data-ng-model="vm.contact.lastName">
+            <div data-ng-messages="contactForm.lastName.$dirty && contactForm.lastName.$error" role="alert">
+                <div class="help-block" data-ng-message="required">Please enter a value for this field.</div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Contact Fields</legend>
+
+        <div class="form-group" data-ng-repeat="(index, contactField) in vm.contact.contactFields">
+            <div class="contact-editor-contact-field-row">
+                <button class="contact-editor-contact-field-row-button-delete btn btn-danger" type="button" data-ng-click="vm.deleteContactField(index)">D</button>
+
+                <div class="contact-editor-contact-field-col contact-editor-contact-field-col-type">
+                    <label class="control-label">Type</label>
+                    <select class="form-control" data-ng-model="contactField.type" ng-options="item.id as item.name for item in vm.contactFieldTypes"></select>
+                </div>
+
+                <div class="contact-editor-contact-field-col contact-editor-contact-field-col-label">
+                    <label class="control-label">Label</label>
+                    <input class="form-control" type="text" required data-ng-model="contactField.label">
+                </div>
+
+                <div class="contact-editor-contact-field-col contact-editor-contact-field-col-value">
+                    <label class="control-label">Value</label>
+                    <input class="form-control" type="email" required data-ng-model="contactField.value" data-ng-if="vm.contactFieldTypes[0].id === contactField.type">
+                    <input class="form-control" type="tel" required data-ng-model="contactField.value" data-ng-if="vm.contactFieldTypes[1].id === contactField.type">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" type="button" data-ng-click="vm.addContactField()">
+                New
+            </button>
+        </div>
+    </fieldset>
+
+    <fieldset class="contact-editor-fieldset-group">
+        <legend>Groups</legend>
+
+        <div class="checkbox" data-ng-repeat="group in vm.groups">
+            <label>
+                <input name="groups[]" type="checkbox" data-ng-checked="vm.hasGroup(group)">
+                {{ ::group.name }}
+            </label>
+        </div>
+    </fieldset>
+
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit" data-ng-disabled="contactForm.$invalid">Save</button>
+    </div>
+</form>

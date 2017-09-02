@@ -1,20 +1,20 @@
-<div class="contact-list-item media" data-ng-show="vm.contact.isVisible">
+<div class="contact-list-item media" data-ng-class="vm.getClass()" data-ng-show="vm.contact.isVisible" data-ng-click="vm.activate()">
     <div class="media-left">
-        <a data-ui-sref="contact({ id: {{::vm.contact.id}} })">
+        <a data-ui-sref="contact({ id: {{ ::vm.contact.id }} })">
             <img class="media-object" src="http://via.placeholder.com/70x70" alt="- alt text-" height="70" width="70">
         </a>
     </div>
     <div class="media-body">
-        <span class="contact-list-item-contact-name">{{::vm.contact.firstName}}&nbsp;{{::vm.contact.lastName}}</span>
+        <span class="contact-list-item-contact-name">{{ ::vm.contact.firstName }}&nbsp;{{ ::vm.contact.lastName }}</span>
         <ul class="list-inline pull-right">
             <li>
-                <a class="btn btn-primary" data-ui-sref="contact({ id: {{::vm.contact.id}} })">
-                    <i class="glyphicon glyphicon-info-sign"></i>
+                <a class="btn btn-primary" data-ui-sref="contact({ id: {{ ::vm.contact.id }} })">
+                    <i class="fa fa-info-circle"></i>
                 </a>
             </li>
             <li>
-                <a class="btn btn-primary" data-ui-sref="edit({ id: {{::vm.contact.id}} })">
-                    <i class="glyphicon glyphicon-edit"></i>
+                <a class="btn btn-primary" data-ui-sref="edit({ id: {{ ::vm.contact.id }} })">
+                    <i class="fa fa-pencil-square-o"></i>
                 </a>
             </li>
         </ul>

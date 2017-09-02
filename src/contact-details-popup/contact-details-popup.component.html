@@ -1,0 +1,27 @@
+<section class="contact-details-popup" data-ng-show="!!vm.contact">
+    <span class="contact-details-popup-close">Close</span>
+
+    <header class="media">
+        <div class="media-left">
+            <img class="media-object" src="http://via.placeholder.com/70x70" alt="- alt text -" height="70" width="70">
+        </div>
+        <div class="media-body">
+            <h1 class="contact-details-popup-heading-title">{{ vm.contact.firstName }}&nbsp;{{ vm.contact.lastName }}</h1>
+        </div>
+    </header>
+
+    <div class="table-responsive">
+        <table class="table">
+            <tbody>
+                <tr data-ng-repeat="contactField in vm.contact.contactFields" data-ng-if="0 !== vm.contact.contactFields.length">
+                    <td>{{ contactField.label }}</td>
+                    <td>{{ contactField.value }}</td>
+                </tr>
+                <tr>
+                    <td>Groups</td>
+                    <td>---</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

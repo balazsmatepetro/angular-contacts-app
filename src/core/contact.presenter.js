@@ -18,6 +18,7 @@ export default class ContactPresenter {
         this.id = contact.id;
         this.firstName = contact.firstName;
         this.lastName = contact.lastName;
+        this.contactFields = contact.contactFields;
         this.groups = contact.groups;
         this.isVisible = !!isVisible;
         this.isActive = !!isActive;

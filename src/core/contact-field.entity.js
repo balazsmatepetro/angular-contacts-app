@@ -29,9 +29,9 @@ export default class ContactField {
             throw new Error('The label must be a string!');
         }
         // If the label is an empty string, we have to throw an exception.
-        if (0 === label.length) {
-            throw new Error('The label cannot be an empty string!');
-        }
+        // if (0 === label.length) {
+        //     throw new Error('The label cannot be an empty string!');
+        // }
         // If the given type is not a valid type, we have to throw an exception.
         if (Types.CONTACT_FIELD_TYPE_EMAIL !== type && Types.CONTACT_FIELD_TYPE_PHONE_NUMBER !== type) {
             throw new Error('Invalid type given!');
@@ -41,13 +41,21 @@ export default class ContactField {
             throw new Error('The value must be a string!');
         }
         // If the given value is an empty string, we have to throw an exception.
-        if (0 === value.length) {
-            throw new Error('The value cannot be an empty string!');
-        }
+        // if (0 === value.length) {
+        //     throw new Error('The value cannot be an empty string!');
+        // }
         // Setting fields.
         this.id = id;
         this.label = label;
         this.type = type;
         this.value = value;
+    }
+
+    isEmail() {
+        return Types.CONTACT_FIELD_TYPE_EMAIL === this.type;
+    }
+
+    isPhoneNumber() {
+        return Types.CONTACT_FIELD_TYPE_PHONE_NUMBER === this.type;
     }
 }
