@@ -2,7 +2,7 @@ import Contact from '../../src/core/contact.entity';
 import isContact from '../../src/core/is-contact';
 
 describe('isContact', () => {
-    const CONTACT = new Contact(null, 'John', 'Doe');
+    const CONTACT = new Contact(1, 'John', 'Doe');
 
     it('should return true when the given value is a Contact instance', () => {
         expect(isContact(CONTACT)).toBe(true);

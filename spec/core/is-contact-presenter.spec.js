@@ -3,7 +3,7 @@ import ContactPresenter from '../../src/core/contact.presenter';
 import isContactPresenter from '../../src/core/is-contact-presenter';
 
 describe('isContactPresenter', () => {
-    const CONTACT = new Contact(null, 'John', 'Doe');
+    const CONTACT = new Contact(1, 'John', 'Doe');
     const CONTACT_PRESENTER = new ContactPresenter(CONTACT);
 
     it('should return true when the given value is a ContactPresenter instance', () => {

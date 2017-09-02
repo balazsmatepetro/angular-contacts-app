@@ -29,9 +29,9 @@ describe('narrowVisibleContactEntries', () => {
 
     it('should filter only the visible contact items', () => {
         const CONTACTS = [
-            new Contact(null, 'Al', 'Bundy'),
-            new Contact(null, 'Bud', 'Bundy'),
-            new Contact(null, 'Kelly', 'Bundy')
+            new Contact(1, 'Al', 'Bundy'),
+            new Contact(2, 'Bud', 'Bundy'),
+            new Contact(3, 'Kelly', 'Bundy')
         ];
 
         const CONTACT_PRESENTERS = [

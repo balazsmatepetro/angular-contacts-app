@@ -5,12 +5,12 @@ import SearchService from '../../src/search/search.service';
 
 describe('SearchService', () => {
     const DATA = [
-        new Contact(null, 'Sterling', 'Archer'),
-        new Contact(null, 'Malory', 'Archer'),
-        new Contact(null, 'Lana', 'Kane'),
-        new Contact(null, 'John', 'Doe'),
-        new Contact(null, 'Joe', 'Swanson'),
-        new Contact(null, 'Paul', 'Parker')
+        new Contact(1, 'Sterling', 'Archer'),
+        new Contact(2, 'Malory', 'Archer'),
+        new Contact(3, 'Lana', 'Kane'),
+        new Contact(4, 'John', 'Doe'),
+        new Contact(5, 'Joe', 'Swanson'),
+        new Contact(6, 'Paul', 'Parker')
     ];
 
     let _$rootScope_ = undefined;

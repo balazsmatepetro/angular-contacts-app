@@ -15,7 +15,7 @@ describe('ContactListItemController', () => {
         angular.injector(['ng']).invoke(($rootScope) => {
             _$scope_ = $rootScope.$new();
             controller = new ContactListItemController(_$scope_);
-            contact = new Contact(undefined, '', '');
+            contact = new Contact(1, '', '');
             contactPresenter = new ContactPresenter(contact, true, true);
 
             controller.contactPresenter = contactPresenter;

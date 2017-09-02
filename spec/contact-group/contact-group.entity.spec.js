@@ -21,7 +21,7 @@ describe('ContactGroup', () => {
 
     it('should throw exception when of the contacts is not a Contact or ContactPresenter instance', () => {
         const CONTACTS = [
-            new Contact(null, 'John', 'Doe'),
+            new Contact(1, 'John', 'Doe'),
             new Number(1)
         ];
 
@@ -43,7 +43,7 @@ describe('ContactGroup', () => {
     });
 
     it('should accept Contact and ContactPresenter instances', () => {
-        const CONTACT = new Contact(null, 'John', 'Doe');
+        const CONTACT = new Contact(1, 'John', 'Doe');
         const CONTACT_PRESENTER = new ContactPresenter(CONTACT);
         const CONTACTS = [CONTACT, CONTACT_PRESENTER];
         const CONTACT_GROUP = new ContactGroup('Group 1', CONTACTS);
