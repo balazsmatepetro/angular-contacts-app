@@ -1,10 +1,29 @@
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../../node_modules/font-awesome/scss/mixins";
+@import "../../node_modules/font-awesome/scss/variables";
 @import "../variables";
+
+.search {
+    position: relative;
+
+    &:before {
+        @include fa-icon;
+        bottom: $search-input-container-padding-vertical;
+        content: $fa-var-search;
+        font-size: $search-icon-font-size;
+        line-height: $search-input-height;
+        position: absolute;
+        text-align: center;
+        top: $search-input-container-padding-vertical;
+        width: $search-icon-width;
+    }
+}
 
 .search-input {
     background-color: transparent;
     border: none;
     display: block;
+    height: $search-input-height;
     width: 100%;
 
     &:focus {
@@ -13,23 +32,11 @@
 }
 
 .search-input-container {
-    $padding-horizontal: $line-height-computed / 2;
-    $padding-left: $padding-horizontal * 2 + $search-input-icon-width;
-    $padding-vertical: $line-height-computed / 5;
+    $padding-vertical: $search-input-container-padding-vertical;
 
     border-bottom: 1px solid $search-input-container-color-border;
-    padding: $padding-vertical $padding-horizontal $padding-vertical $padding-left;
+    padding: $padding-vertical ($line-height-computed / 2) $padding-vertical $search-icon-width;
     position: relative;
-
-    .glyphicon {
-        display: block;
-        left: $padding-horizontal;
-        position: absolute;
-        text-align: center;
-        // TODO: This value must be calculated!
-        top: 6px;
-        width: $search-input-icon-width;
-    }
 
     &:after,
     &:before {

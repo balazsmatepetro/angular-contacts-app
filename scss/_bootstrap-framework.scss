@@ -2,6 +2,10 @@
 // I created this file because I didn't want to include the whole Bootstrap framework.
 // In this file I include only those components which are really necessary.
 
+// NOTE:
+// The Glyphicons are removed, sorry, but I really don't like Glyphicons, because I cannot
+// use them as mixins.
+
 // Core variables and mixins
 @import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
@@ -9,7 +13,6 @@
 // Reset and dependencies
 @import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
 @import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/print";
-@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
 
 // Core CSS
 @import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";

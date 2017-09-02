@@ -1,3 +1,5 @@
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
 // Application
 
 // --- Common
@@ -10,19 +12,23 @@ $contact-list-item-color-border-bottom: #cacaca;
 $contact-list-item-image-height: 70px;
 $contact-list-item-image-width: 70px;
 
+// --- Contact Editor
+$contact-editor-contact-field-row-grid-gutter-width: $grid-gutter-width;
+
 // --- Contact Group
 $contact-group-name-color-bg: #e5e3e5;
 $contact-group-name-padding-left: $contact-list-item-image-width + 10;
 
-// --- Contact List Action Container
-$contact-list-action-container-color-icon: #747274;
-
-// --- Contact List Action List
-$contact-list-action-list-item-color-border: $border-color-primary;
+// --- Contact List
+$contact-list-top-color-text: #747274;
+$contact-list-top-icon-size: $font-size-large;
 
 // --- Search
+$search-icon-font-size: $contact-list-top-icon-size;
+$search-icon-width: 36px;
+$search-input-container-padding-vertical: $line-height-computed / 5;
 $search-input-container-color-border: $border-color-primary;
-$search-input-icon-width: 16px;
+$search-input-height: 26px;
 
 // Bootstrap Overrides
 
@@ -34,5 +40,6 @@ $link-color: $text-color;
 // --- Forms
 $legend-border-color: $border-color-primary;
 
-// --- Iconography
-$icon-font-path: "../../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
+// FontAwesome Overrides
+
+$fa-font-path: "../../node_modules/font-awesome/fonts";

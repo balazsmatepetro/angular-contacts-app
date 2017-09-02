@@ -1,0 +1,44 @@
+@import "../../node_modules/font-awesome/scss/mixins";
+@import "../../node_modules/font-awesome/scss/variables";
+@import "../variables";
+
+.contact-list-top {
+    border-bottom: 2px solid $border-color-primary;
+    color: $contact-list-top-color-text;
+    padding-bottom: $line-height-computed / 4;
+
+    @media (min-width: $screen-sm-min) {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .search {
+        margin-bottom: $line-height-computed / 2;
+
+        @media (min-width: $screen-sm-min) {
+            margin-bottom: 0;
+        }
+    }
+
+    a {
+        color: $contact-list-top-color-text;
+
+        &:before {
+            @include fa-icon;
+            content: $fa-var-plus-circle;
+            font-size: $contact-list-top-icon-size;
+            margin: 0 $line-height-computed / 4;
+            position: relative;
+            top: 1px;
+        }
+        
+        &:active,
+        &:focus,
+        &:hover,
+        &:visited {
+            text-decoration: none;
+        }
+    }
+}
