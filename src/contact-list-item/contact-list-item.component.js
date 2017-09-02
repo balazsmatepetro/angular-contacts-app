@@ -2,7 +2,7 @@ import ContactListItemController from './contact-list-item.controller';
 
 export default {
     bindings: {
-        contact: '<'
+        contactPresenter: '<'
     },
     controller: ContactListItemController,
     controllerAs: 'vm',
