@@ -1,0 +1,37 @@
+@import "variables";
+@import "bootstrap-framework";
+@import "../node_modules/font-awesome/scss/font-awesome";
+
+@import "components/contact-details-popup";
+@import "components/contact-editor";
+@import "components/contact-group";
+@import "components/contact-list-item-counter";
+@import "components/contact-list-item";
+@import "components/contact-list";
+@import "components/container";
+@import "components/footer";
+@import "components/search";
+
+@import "overrides/buttons";
+@import "overrides/scaffolding";
+
+main {
+    /* start 'enter' transition */
+    &.ng-enter {
+        /* transition on enter for .5s */
+        transition: .5s;
+
+        /* start with opacity 0 (invisible) */
+        opacity: 0;
+    }
+    /* end 'enter' transition */
+
+    &.ng-enter-active {
+        /* end with opacity 1 (fade in) */
+        opacity: 1;
+    }
+
+    &.ng-leave {
+        display: none;
+    }
+}

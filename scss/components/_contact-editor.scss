@@ -1,0 +1,66 @@
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+.contact-editor {
+    legend {
+        margin-bottom: $line-height-computed / 2;
+    }
+}
+
+.contact-editor-fieldset-group {
+    legend {
+        margin-bottom: 0;
+    }
+}
+
+.contact-editor-contact-field-row {
+    @include make-row($contact-editor-contact-field-row-grid-gutter-width);
+    position: relative;
+}
+
+.contact-editor-contact-field-row-button-delete {
+    position: absolute;
+    right: $contact-editor-contact-field-row-grid-gutter-width / 2;
+    top: 25px;
+    z-index: 1;
+
+    @media (min-width: $screen-md-min) {
+        bottom: 0;
+        top: auto;
+    }
+}
+
+.contact-editor-contact-field-col {
+    margin-bottom: $form-group-margin-bottom;
+
+    @media (min-width: $screen-md-min) {
+        margin-bottom: 0;
+    }
+}
+
+.contact-editor-contact-field-col-label,
+.contact-editor-contact-field-col-type,
+.contact-editor-contact-field-col-value {
+    @include make-xs-column(12, $contact-editor-contact-field-row-grid-gutter-width);
+}
+
+.contact-editor-contact-field-col-type {
+    @include make-md-column(2, $contact-editor-contact-field-row-grid-gutter-width);
+    padding-right: 60px;
+}
+
+.contact-editor-contact-field-col-label,
+.contact-editor-contact-field-col-value {
+    @include make-sm-column(6, $contact-editor-contact-field-row-grid-gutter-width);
+    @include make-md-column(5, $contact-editor-contact-field-row-grid-gutter-width);
+}
+
+@media (min-width: $screen-md-min) {
+    .contact-editor-contact-field-col-type {
+        padding-right: $contact-editor-contact-field-row-grid-gutter-width / 2;
+    }
+
+    .contact-editor-contact-field-col-value {
+        padding-right: 60px;
+    }
+}

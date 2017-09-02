@@ -6,6 +6,11 @@
 $animation-duration: .5s;
 $border-color-primary: #a5a2a9;
 
+// --- Contact Details Popup
+$contact-details-popup-border-color: $border-color-primary;
+$contact-details-popup-padding-horizontal: ($line-height-computed * 2);
+$contact-details-popup-padding-vertical: ($line-height-computed * 1.5);
+
 // --- Contact List Item
 $contact-list-item-color-bg: #a9c6f5;
 $contact-list-item-color-border-bottom: #cacaca;

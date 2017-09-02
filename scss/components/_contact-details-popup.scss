@@ -1,0 +1,51 @@
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/vendor-prefixes";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../../node_modules/font-awesome/scss/mixins";
+@import "../../node_modules/font-awesome/scss/variables";
+@import "../mixins/ng-hide-transition";
+
+.contact-details-popup {
+    $position-value: $line-height-computed * 1.5;
+
+    @include box-shadow(0px 0px 10px 0px rgba(97,97,97,1));
+    @include ng-hide-transition;
+    background-color: #fff;
+    bottom: $position-value;
+    left: $position-value;
+    padding: $contact-details-popup-padding-vertical $contact-details-popup-padding-horizontal;
+    position: fixed;
+    right: $position-value;
+    top: $position-value;
+
+    @media (min-width: $screen-md-min) {
+        left: auto;
+        width: 60%;
+    }
+
+    .media {
+        border-top: 1px solid $contact-details-popup-border-color;
+        margin: $line-height-computed 0;
+    }
+}
+
+.contact-details-popup-close {
+    cursor: pointer;
+    position: absolute;
+    right: $contact-details-popup-padding-horizontal;
+    top: 10px;
+
+    &:before {
+        @include fa-icon;
+        content: $fa-var-close;
+        font-size: 24px;
+        margin: 0 ($line-height-computed / 4);
+        position: relative;
+        top: 3px;
+    }
+}
+
+.contact-details-popup-heading-title {
+    font-size: $font-size-large;
+    font-weight: normal;
+    margin: $line-height-computed / 2 0;
+}
