@@ -1,6 +1,6 @@
 import ContactGroup from '../../src/contact-group/contact-group.entity';
 import Contact from '../../src/core/contact.entity';
-import ContactPresenter from '../../src/core/contact.presenter';
+import ContactPresenter from '../../src/core/contact-presenter.entity';
 
 describe('ContactGroup', () => {
     it('should throw exception when the given name is not a string', () => {

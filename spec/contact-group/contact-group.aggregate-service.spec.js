@@ -1,7 +1,7 @@
 import AggregateService from '../../src/contact-group/contact-group.aggregate-service';
 import Contact from '../../src/core/contact.entity';
 import ContactGroupMap from '../../src/contact-group/contact-group.contact-group-map';
-import ContactPresenter from '../../src/core/contact.presenter';
+import ContactPresenter from '../../src/core/contact-presenter.entity';
 
 describe('AggregateService', () => {
     let service = undefined;
@@ -28,7 +28,7 @@ describe('AggregateService', () => {
 
         it('should aggregate ContactPresenter instances correctly', () => {
             const CONTACT_PRESENTERS = [
-                new ContactPresenter(new Contact(1, 'Sterlin', 'Archer')),
+                new ContactPresenter(new Contact(1, 'Sterling', 'Archer')),
                 new ContactPresenter(new Contact(2, 'Malory', 'Archer')),
                 new ContactPresenter(new Contact(3, 'Lana', 'Kane')),
                 new ContactPresenter(new Contact(4, 'Cyril', 'Figgis')),

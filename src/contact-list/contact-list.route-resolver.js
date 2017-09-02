@@ -1,4 +1,4 @@
-import ContactPresenter from '../core/contact.presenter';
+import ContactPresenter from '../core/contact-presenter.entity';
 
 /**
  * Makes a HTTP request and fetches all contact entries. After the response has arrived 

@@ -1,6 +1,6 @@
 import angular from 'angular';
 import Contact from '../../src/core/contact.entity';
-import ContactPresenter from '../../src/core/contact.presenter';
+import ContactPresenter from '../../src/core/contact-presenter.entity';
 import ContactListItemController from '../../src/contact-list-item/contact-list-item.controller';
 import * as Events from '../../src/contact-list-item/contact-list-item.events';
 

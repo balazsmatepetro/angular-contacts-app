@@ -1,4 +1,4 @@
-import ContactPresenter from './contact.presenter';
+import ContactPresenter from './contact-presenter.entity';
 import isObject from 'lodash.isobject';
 
 /**

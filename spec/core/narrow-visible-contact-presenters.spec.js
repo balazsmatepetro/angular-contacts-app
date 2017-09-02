@@ -1,5 +1,5 @@
 import Contact from '../../src/core/contact.entity';
-import ContactPresenter from '../../src/core/contact.presenter';
+import ContactPresenter from '../../src/core/contact-presenter.entity';
 import narrowVisibleContactEntries from '../../src/core/narrow-visible-contact-presenters';
 
 describe('narrowVisibleContactEntries', () => {
