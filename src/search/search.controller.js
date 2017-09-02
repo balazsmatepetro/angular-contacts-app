@@ -44,9 +44,9 @@ export default class SearchController {
             })
             .catch(() => this.$scope.$emit('searchError'));
 
-        function changeVisibility(contacts, predicate) {
+        function changeVisibility(contactPresenters, predicate) {
             // Looping through the contacts.
-            contacts.forEach((contact) => {
+            contactPresenters.forEach((contact) => {
                 // Making visible only those items that match the condition.
                 contact.isVisible = predicate(contact);
             });
