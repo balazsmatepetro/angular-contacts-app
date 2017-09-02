@@ -8,7 +8,7 @@ export default function appRouting($urlRouterProvider, $stateProvider) {
             component: 'contactList',
             url: '/',
             resolve: {
-                contacts: ['contactService', contactListResolver]
+                contactPresenters: ['contactService', contactListResolver]
             }
         })
         .state('contact', {

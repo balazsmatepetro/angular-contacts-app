@@ -15,12 +15,12 @@ export default class ContactListController {
         this.$scope.$on('selectContact', (event, payload) => {
             this.selectedContact = payload.selectedContact;
 
-            this.contacts.forEach((contact) => {
+            this.contactPresenters.forEach((contact) => {
                 contact.isActive = payload.selectedContact.id === contact.id;
             });
         });
 
-        this.$scope.$watch(() => this.contacts, (contacts) => {
+        this.$scope.$watch(() => this.contactPresenters, (contacts) => {
             this.groupContacts(contacts);
         });
     }

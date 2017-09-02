@@ -15,7 +15,7 @@ export default class ContactListItemCounterController {
      * @memberof ContactListItemCounterController
      */
     count() {
-        return narrowVisibleContactPresenters(this.contacts).length;
+        return narrowVisibleContactPresenters(this.contactPresenters).length;
     }
 
     /**

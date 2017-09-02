@@ -2,7 +2,7 @@ import ContactListItemCounterController from './contact-list-item-counter.contro
 
 export default {
     bindings: {
-        contacts: '<'
+        contactPresenters: '<'
     },
     controller: ContactListItemCounterController,
     controllerAs: 'vm',
