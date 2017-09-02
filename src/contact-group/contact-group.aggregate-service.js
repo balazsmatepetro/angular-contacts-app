@@ -1,4 +1,3 @@
-import ContactPresenter from '../core/contact.presenter';
 import ContactGroup from './contact-group.entity';
 import ContactGroupMap from './contact-group.contact-group-map';
 import helper from './contact-group.helper';
