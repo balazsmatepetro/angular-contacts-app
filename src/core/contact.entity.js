@@ -12,6 +12,16 @@ import isString from 'lodash.isstring';
  * @author Balázs Máté Petró <petrobalazsmate@gmail.com>
  */
 export default class Contact {
+    /**
+     * Creates an instance of Contact.
+     * 
+     * @param {Number|null|undefined} The id of contact entry.
+     * @param {String} firstName The first name of person.
+     * @param {String} lastName The last name of person.
+     * @param {Array.<ContactField>} [contactFields=[]]  The collection of contact field the person belongs to.
+     * @param {Array.<Group>} The collection of groups which the person belongs to.
+     * @memberof Contact
+     */
     constructor(id, firstName, lastName, contactFields = [], groups = []) {
         // If the ID is not a nil value and not an integer ID, we have to throw an exception.
         if (!isNil(id) && !isIntegerId(id)) {
