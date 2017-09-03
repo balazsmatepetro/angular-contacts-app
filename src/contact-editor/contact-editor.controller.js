@@ -60,7 +60,7 @@ export default class ContactEditorController {
      */
     addContactField() {
         this.contact.contactFields.push(
-            new ContactField(null, '', ContactFieldTypes.CONTACT_FIELD_TYPE_EMAIL, '')
+            new ContactField('', ContactFieldTypes.CONTACT_FIELD_TYPE_EMAIL, '')
         );
     }
 

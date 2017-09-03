@@ -1,5 +1,4 @@
 import * as Types from './contact-field.types';
-import isNil from 'lodash.isnil';
 import isString from 'lodash.isstring';
 
 /**
@@ -13,17 +12,12 @@ export default class ContactField {
     /**
      * Creates an instance of ContactField.
      * 
-     * @param {String|undefined|null} id The ID of contact field.
      * @param {String} label The label of contact field.
      * @param {String} type The type of contact field.
      * @param {String} value The value of contact field.
      * @memberof ContactField
      */
-    constructor(id, label, type, value) {
-        // If the given ID is not a nil or a string, we have to throw an exception.
-        if (!isNil(id) && (!isString(id) || 0 === id.length)) {
-            throw new Error('The ID must be a nil (undefined, null) or a unique string ID');
-        }
+    constructor(label, type, value) {
         // If the label is not a string, we have to throw an exception.
         if (!isString(label)) {
             throw new Error('The label must be a string!');
@@ -37,7 +31,6 @@ export default class ContactField {
             throw new Error('The value must be a string!');
         }
         // Setting fields.
-        this.id = id;
         this.label = label;
         this.type = type;
         this.value = value;

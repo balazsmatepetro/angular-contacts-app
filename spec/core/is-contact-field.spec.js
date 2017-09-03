@@ -3,7 +3,7 @@ import isContactField from '../../src/core/is-contact-field';
 import * as Types from '../../src/core/contact-field.types';
 
 describe('isContact', () => {
-    const CONTACT_FIELD = new ContactField(null, 'Label', Types.CONTACT_FIELD_TYPE_EMAIL, 'Value');
+    const CONTACT_FIELD = new ContactField('Label', Types.CONTACT_FIELD_TYPE_EMAIL, 'Value');
 
     it('should return true when the given value is a ContactField instance', () => {
         expect(isContactField(CONTACT_FIELD)).toBe(true);

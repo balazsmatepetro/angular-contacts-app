@@ -60,9 +60,9 @@ describe('ContactEditorController', () => {
     describe('deleteContactField', () => {
         beforeEach(() => {
             controller.contact.contactFields = [
-                new ContactField('contact-field-1', 'Label 1', ContactFieldTypes.CONTACT_FIELD_TYPE_EMAIL, 'Value 1'),
-                new ContactField('contact-field-2', 'Label 2', ContactFieldTypes.CONTACT_FIELD_TYPE_PHONE_NUMBER, 'Value 2'),
-                new ContactField('contact-field-3', 'Label 3', ContactFieldTypes.CONTACT_FIELD_TYPE_EMAIL, 'Value 3')
+                new ContactField('Label 1', ContactFieldTypes.CONTACT_FIELD_TYPE_EMAIL, 'Value 1'),
+                new ContactField('Label 2', ContactFieldTypes.CONTACT_FIELD_TYPE_PHONE_NUMBER, 'Value 2'),
+                new ContactField('Label 3', ContactFieldTypes.CONTACT_FIELD_TYPE_EMAIL, 'Value 3')
             ];
         });
 

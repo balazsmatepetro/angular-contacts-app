@@ -9,7 +9,6 @@ describe('Contact', () => {
     const CONTACT_LAST_NAME = 'Doe';
     const CONTACT_CONTACT_FIELDS = [
         new ContactField(
-            'unique-id',
             'Label',
             ContactFieldTypes.CONTACT_FIELD_TYPE_EMAIL,
             'john@doe.com'
@@ -67,7 +66,7 @@ describe('Contact', () => {
 
         it('should throw exception when one of the contact fields is not a ContactField instance', () => {
             const CONTACT_FIELDS = [
-                new ContactField(null, 'Label', ContactFieldTypes.CONTACT_FIELD_TYPE_EMAIL, 'Value'),
+                new ContactField('Label', ContactFieldTypes.CONTACT_FIELD_TYPE_EMAIL, 'Value'),
                 new Number(1)
             ];
 
