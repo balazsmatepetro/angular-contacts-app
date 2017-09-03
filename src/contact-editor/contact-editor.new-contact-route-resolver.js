@@ -1,9 +1,17 @@
 import Contact from '../core/contact.entity';
 
+/**
+ * Creates a new, empty Contact instance.
+ * 
+ * @export
+ * @param {Object} $q Angular $q service.
+ * @returns {Contact}
+ */
 export default function newContactResolver($q) {
+    // Creates a deferred object.
     const DEFERRED = $q.defer();
-
-    DEFERRED.resolve(new Contact(undefined, '', '', []));
-
+    // Resolving deferred with the contact entity.
+    DEFERRED.resolve(new Contact(undefined, '', ''));
+    // Returning the promise.
     return DEFERRED.promise;
 }
