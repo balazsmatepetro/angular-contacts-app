@@ -1,14 +1,15 @@
 module.exports = function (grunt) {
-    const SOURCE_FILES = 'src/**/*.js';
-    const TEMPLATES_FILE = 'dist/templates.js';
+    const DIST_PATH = 'dist';
+    const JS_SOURCE_FILES = 'src/**/*.js';
+    const JS_TEMPLATES_FILE = `${DIST_PATH}/js/templates.js`;
     
     grunt.initConfig({
         browserify: {
             dist: {
                 files: {
-                    'dist/app.js': [
-                        SOURCE_FILES,
-                        TEMPLATES_FILE
+                    'dist/js/app.js': [
+                        JS_SOURCE_FILES,
+                        JS_TEMPLATES_FILE
                     ]
                 },
                 options: {
@@ -21,18 +22,21 @@ module.exports = function (grunt) {
                 }
             }
         },
+        clean: {
+            dist: ['dist']
+        },
         eslint: {
             options: {
                 configFile: '.eslintrc'
             },
             sources: [
-                SOURCE_FILES
+                JS_SOURCE_FILES
             ]
         },
         ngtemplates: {
             app: {
                 src: 'src/**/*.html',
-                dest: TEMPLATES_FILE
+                dest: JS_TEMPLATES_FILE
             }
         },
         sass: {
@@ -49,11 +53,13 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-browserify');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-eslint');
 
     grunt.registerTask('dev', [
         'eslint',
+        'clean',
         'ngtemplates',
         'browserify',
         'sass'
