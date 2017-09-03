@@ -2,7 +2,8 @@ import ContactEditorController from './contact-editor.controller';
 
 export default {
     bindings: {
-        contact: '<'
+        contact: '<',
+        groupPresenters: '<'
     },
     controller: ContactEditorController,
     controllerAs: 'vm',

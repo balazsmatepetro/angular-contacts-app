@@ -1,4 +1,4 @@
-<form class="contact-editor" name="contactForm" data-ng-submit="vm.save()">
+<form class="contact-editor" name="contactForm" data-ng-submit="vm.save()" data-ng-init="vm.init()">
     <fieldset>
         <legend>Basic Information</legend>
 
@@ -30,7 +30,9 @@
 
         <div class="form-group" data-ng-repeat="(index, contactField) in vm.contact.contactFields">
             <div class="contact-editor-contact-field-row">
-                <button class="contact-editor-contact-field-row-button-delete btn btn-danger" type="button" data-ng-click="vm.deleteContactField(index)">D</button>
+                <button class="contact-editor-contact-field-row-button-delete btn btn-danger" type="button" data-ng-click="vm.deleteContactField(index)">
+                    <i class="fa fa-times-circle"></i>
+                </button>
 
                 <div class="contact-editor-contact-field-col contact-editor-contact-field-col-type">
                     <label class="control-label">Type</label>
@@ -39,19 +41,29 @@
 
                 <div class="contact-editor-contact-field-col contact-editor-contact-field-col-label">
                     <label class="control-label">Label</label>
-                    <input class="form-control" type="text" required data-ng-model="contactField.label">
+                    <input class="form-control" name="contactField-{{ $index }}-label" type="text" required data-ng-model="contactField.label">
                 </div>
 
                 <div class="contact-editor-contact-field-col contact-editor-contact-field-col-value">
                     <label class="control-label">Value</label>
-                    <input class="form-control" type="email" required data-ng-model="contactField.value" data-ng-if="vm.contactFieldTypes[0].id === contactField.type">
-                    <input class="form-control" type="tel" required data-ng-model="contactField.value" data-ng-if="vm.contactFieldTypes[1].id === contactField.type">
+                    <input class="form-control" name="contactField-{{ $index }}-value" type="text" required data-ng-model="contactField.value">
+                </div>
+
+                <div class="contact-editor-contact-field-col-label-message" data-ng-show="contactForm['contactField-' + $index + '-label'].$invalid || contactForm['contactField-' + $index + '-value'].$invalid">
+                    <div data-ng-messages="contactForm['contactField-' + $index + '-label'].$error" role="alert">
+                        <div class="help-block" data-ng-message="required">Please enter a value for 'Label' field.</div>
+                    </div>
+
+                    <div data-ng-messages="contactForm['contactField-' + $index + '-value'].$error" role="alert">
+                        <div class="help-block" data-ng-message="required">Please enter a valid input for 'Value' field.</div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="form-group">
             <button class="btn btn-primary" type="button" data-ng-click="vm.addContactField()">
+                <i class="fa fa-plus-circle"></i>
                 New
             </button>
         </div>
@@ -60,15 +72,18 @@
     <fieldset class="contact-editor-fieldset-group">
         <legend>Groups</legend>
 
-        <div class="checkbox" data-ng-repeat="group in vm.groups">
+        <div class="checkbox" data-ng-repeat="groupPresenter in vm.groupPresenters">
             <label>
-                <input name="groups[]" type="checkbox" data-ng-checked="vm.hasGroup(group)">
-                {{ ::group.name }}
+                <input name="groups[]" type="checkbox" data-ng-checked="groupPresenter.isSelected" data-ng-click="vm.toggleGroup(groupPresenter)">
+                {{ ::groupPresenter.name }}
             </label>
         </div>
     </fieldset>
 
     <div class="form-group">
-        <button class="btn btn-primary" type="submit" data-ng-disabled="contactForm.$invalid">Save</button>
+        <button class="btn btn-primary" type="submit" data-ng-disabled="contactForm.$invalid">
+            <i class="fa fa-save"></i>
+            Save
+        </button>
     </div>
 </form>

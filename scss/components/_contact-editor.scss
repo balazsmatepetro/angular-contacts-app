@@ -23,11 +23,6 @@
     right: $contact-editor-contact-field-row-grid-gutter-width / 2;
     top: 25px;
     z-index: 1;
-
-    @media (min-width: $screen-md-min) {
-        bottom: 0;
-        top: auto;
-    }
 }
 
 .contact-editor-contact-field-col {
@@ -35,6 +30,15 @@
 
     @media (min-width: $screen-md-min) {
         margin-bottom: 0;
+    }
+}
+
+.contact-editor-contact-field-col-label-message {
+    @include make-xs-column(12, $contact-editor-contact-field-row-grid-gutter-width);
+    margin-top: $line-height-computed / 2;
+
+    .help-block {
+        margin: 0;
     }
 }
 
