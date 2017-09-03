@@ -6,7 +6,7 @@ import GroupPresenter from '../core/group-presenter.entity';
  * 
  * @export
  * @param {Object} $q Angular $q service.
- * @returns {Array.<GroupPresenter>}
+ * @returns {Promise}
  */
 export default function groupPresentersRouteResolver($q) {
     // The array of groups.

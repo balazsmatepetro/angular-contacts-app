@@ -5,7 +5,7 @@ import Contact from '../core/contact.entity';
  * 
  * @export
  * @param {Object} $q Angular $q service.
- * @returns {Contact}
+ * @returns {Promise<Contact>}
  */
 export default function newContactResolver($q) {
     // Creates a deferred object.
