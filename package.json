@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node node_modules/.bin/karma start"
+    "test": "node node_modules/.bin/karma start",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
