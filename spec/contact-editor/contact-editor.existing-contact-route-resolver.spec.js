@@ -11,13 +11,17 @@ describe('existingContactResolver', () => {
     let contactService;
 
     beforeEach(() => {
-        angular.module('mockApp', []).provider({
+        var mockApp = angular.module('mockApp', []).provider({
             $rootElement: function () {
                 this.$get = function () {
                     return angular.element('<div ng-app></div>');
                 };
             }
         });
+
+        mockApp.config(['$qProvider', function ($qProvider) {
+            $qProvider.errorOnUnhandledRejections(false);
+        }]);
 
         angular.injector(['ng', 'mockApp', uiRouter]).invoke(($rootScope, $q, $state, $stateParams) => {
             _$rootScope_ = $rootScope;
@@ -48,6 +52,34 @@ describe('existingContactResolver', () => {
             });
 
             _$rootScope_.$digest();
+        });
+    });
+
+    describe('failure', () => {
+        let findByIdSpy = undefined;
+        let stateGoSpy = undefined;
+
+        beforeEach(() => {
+            findByIdSpy = spyOn(contactService, 'findById').and.callFake(() => {
+                const DEFERRED = _$q_.defer();
+
+                DEFERRED.reject(true);
+
+                _$rootScope_.$digest();
+
+                return DEFERRED.promise;
+            });
+
+            stateGoSpy = spyOn(_$state_, 'go').and.callFake(() => false);
+        });
+
+        it('should call $state.go when the contact could not be located', () => {
+            existingContactResolver(_$state_, _$stateParams_, contactService).catch(() => {
+                expect(findByIdSpy).toHaveBeenCalled();
+                expect(stateGoSpy).toHaveBeenCalled();
+
+                console.log('log');
+            });
         });
     });
 });

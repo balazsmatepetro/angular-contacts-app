@@ -8,5 +8,7 @@
  * @returns {Promise<Contact>}
  */
 export default function existingContactResolver($state, $stateParams, contactService) {
-    return contactService.findById($stateParams.id).catch(() => $state.go('contacts'));
+    return contactService.findById($stateParams.id).then((contact) => contact, () => {
+        $state.go('contacts');
+    });
 }
