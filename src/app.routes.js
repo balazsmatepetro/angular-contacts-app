@@ -6,11 +6,7 @@ export default function appRouting($urlRouterProvider, $stateProvider) {
     $stateProvider
         .state('contacts', {
             component: 'contactList',
-            url: '/',
-            onEnter: ['contactService', (contactService) => {
-                // Loading contacts. (Catching event that loads contacts was a requirement!)
-                contactService.loadAll();
-            }]
+            url: '/'
         })
         .state('contact', {
             component: 'contactDetails',
