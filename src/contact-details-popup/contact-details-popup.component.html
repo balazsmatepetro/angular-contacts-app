@@ -1,5 +1,5 @@
 <section class="contact-details-popup" data-ng-show="!!vm.contact">
-    <span class="contact-details-popup-close">Close</span>
+    <span class="contact-details-popup-close" data-ng-click="vm.close()">Close</span>
 
     <header class="media">
         <div class="media-left">
@@ -19,7 +19,7 @@
                 </tr>
                 <tr>
                     <td>Groups</td>
-                    <td>---</td>
+                    <td>{{ vm.getGroupNames() }}</td>
                 </tr>
             </tbody>
         </table>
