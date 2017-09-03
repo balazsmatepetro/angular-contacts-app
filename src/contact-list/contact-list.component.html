@@ -1,9 +1,11 @@
 <div class="contact-list">
-    <div class="contact-list-top">
-        <search data-contact-presenters="vm.contactPresenters"></search>
-        <a data-ui-sref="new">New</a>
+    <div data-ng-if="vm.contactsLoaded">
+        <div class="contact-list-top">
+            <search data-contact-presenters="vm.contactPresenters"></search>
+            <a data-ui-sref="new">New</a>
+        </div>
+        <contact-details-popup data-contact="vm.selectedContact"></contact-details-popup>
+        <contact-list-item-counter data-contact-presenters="vm.contactPresenters"></contact-list-item-counter>
+        <contact-group data-ng-repeat="contactGroup in vm.contactGroups" data-contact-group="contactGroup"></contact-group>
     </div>
-    <contact-details-popup data-contact="vm.selectedContact"></contact-details-popup>
-    <contact-list-item-counter data-contact-presenters="vm.contactPresenters"></contact-list-item-counter>
-    <contact-group data-ng-repeat="contactGroup in vm.contactGroups" data-contact-group="contactGroup"></contact-group>
 </div>

@@ -1,7 +1,7 @@
 import angular from 'angular';
-import ContactService from './contact.service';
+import contactService from './contact.service';
 
 export default angular
     .module('app.core', [])
-    .service('contactService', ContactService)
+    .service('contactService', ['$rootScope', '$http', '$q', contactService])
     .name;
